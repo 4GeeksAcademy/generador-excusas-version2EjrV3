@@ -4,7 +4,7 @@ import "./style.css";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
-window.onload = function() {
+window.onload = function () {
 
   let who = ["The dog", "My grandma", "The mailman", "My bird"];
 
@@ -19,23 +19,16 @@ window.onload = function() {
     "during my lunch"
   ];
 
-  let whoRandom = Math.floor(Math.random() * who.length);
+  function randomItem(array) {
+    return array[Math.floor(Math.random() * array.length)];
+  }
 
-  let actionRandom = Math.floor(Math.random() * action.length);
-
-  let whatRandom = Math.floor(Math.random() * what.length);
-
-  let whenRandom = Math.floor(Math.random() * when.length);
-
-  let randomWho = who[whoRandom];
-
-  let randomAction = action[actionRandom];
-
-  let randomWhat = what[whatRandom];
-
-  let randomWhen = when[whenRandom];
-
-  let excuse = `${randomWho} ${randomAction} ${randomWhat} ${randomWhen}`;
+  const excuse = `
+    ${randomItem(who)}
+    ${randomItem(action)}
+    ${randomItem(what)}
+    ${randomItem(when)}
+  `;
 
   document.getElementById("excuse").innerHTML = excuse;
 
